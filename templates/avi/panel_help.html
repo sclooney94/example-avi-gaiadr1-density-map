@@ -1,0 +1,49 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    About this AVI
+  </div>
+  <div class="panel-body">
+  	<p>This is a relatively Density Map AVI which demonstrates the following:</p>
+    <ul>
+      <li>AVI service usage</li>
+      <li>Job queuing</li>
+      <li>Pipelines</li>
+    </ul>
+    <p>Below is a list of some of the important files in this AVI</p>
+
+    <table class="table">
+      <caption>Density Map AVI contents:</caption>
+      <thead>
+        <tr>
+          <th>Filename</th>
+          <th>Description</th>
+          <th>Related</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>urls.py</th>
+          <td>Defines the URLs of the AVI</td>
+          <td>views.py</td>
+        </tr>
+        <tr>
+          <th>views.py</th>
+          <td>Defines functions which handle HTTP requests. The AVI job is created and started in 'run_query()'.</td>
+          <td>tasks.py</td>
+        </tr>
+        <tr>
+          <th>tasks.py</th>
+          <td>Defines the AVI pipeline</td>
+          <td>models.py</td>
+        </tr>
+        <tr>
+          <th>models.py</th>
+          <td>Defines the database models which store the job parameters. The parameters stored in these models are used in the pipeline.</td>
+          <td>tasks.py</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a class="btn btn-lg btn-info" href='http://docs.gavip.science/AVI_guide.html' target='_'>View the developer guide</a>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    Query help
+  </div>
+  <div class="panel-body">
+    Enter in an ADQL query.
+  </div>
+</div>
+
+
+<form id="dbquery_form" method="POST"> {% csrf_token %}
+    <div class="form-group">
+        
+        <label for="query">GACS GDR1 VOTable query</label>
+        <textarea class="form-control" id="query" name="query" placeholder="Enter your query here" rows="3" required=true>
+SELECT floor(ra/5.000000)*5.000000 as ra_floor,
+                 floor(dec/5.000000)*5.000000 as dec_floor,
+                 count(*) as nb
+          FROM "I/337/tgas"
+          GROUP BY 1,2
+        </textarea>
+        
+        <label for="outfile">Output file</label>
+        <input class="form-control" id="outfile" name="outfile" placeholder="Enter your output file here" required=true
+        value="SampleFile_{{millis}}.out">
+
+    </div>
+    <button type="submit" class="btn btn-default">Queue AVI job</button>
+</form>
+
+{% load staticfiles %}
+<script src="{% static 'avi/js/panel_enter_query.js' %}"></script>

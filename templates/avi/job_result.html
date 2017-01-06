@@ -1,0 +1,30 @@
+{% extends "base/base.html" %}
+
+{% block avi_title %}
+GAVIP Example AVIs: Density Map AVI
+{% endblock avi_title %}
+
+{% block avi_content %}
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'datatables/datatables.min.js' %}"></script>
+
+<div class="container-fluid">  
+  <div class="row">
+    <div>
+    </div>
+    <div id="fig"></div>
+  </div>
+</div>
+
+{% load staticfiles %}
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="https://mpld3.github.io/js/mpld3.v0.2.js"></script>
+
+{% if job_data %}
+    <script>
+    var fig = {{ job_data|safe }};
+    mpld3.draw_figure("fig", fig);
+    </script>
+{% endif %}
+
+{% endblock avi_content %}

@@ -1,0 +1,43 @@
+
+{% load staticfiles %}
+
+<div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="welcomeModalLabel">A Density Map AVI welcome!</h4>
+      </div>
+
+      <div class="modal-body">
+        <div class="media">          
+          <div class="media-left media-middle">
+            <a href="http://www.parameterspace.ie">
+              <img src="{% static "avi/images/pslogo_square.png" %}" 
+              width="150" alt="Parameter Space Ltd" style="border:0px solid black"/>
+            </a>
+          </div>
+          
+          <div class="media-body">
+            <h4 class="media-heading">GAVIP Example AVIs: <strong>Density Map AVI</strong></h4>
+            <p>This AVI demonstrates the following:</p>
+            <ul>
+              <li>AVI service usage</li>
+              <li>Job queuing</li>
+              <li>Pipelines</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Get Started</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<script src="{% static 'avi/js/avi_welcome.js' %}"></script>

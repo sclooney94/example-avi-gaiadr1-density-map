@@ -1,0 +1,44 @@
+{% extends "base/base.html" %}
+
+{% block avi_title %}
+GAVIP Example AVIs: Density Map AVI
+{% endblock avi_title %}
+
+{% block avi_content %}
+{% load staticfiles %}
+<link href="{% static 'avi/css/avi.css' %}" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="{% static 'datatables/datatables.min.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'datatables/datatables.min.css' %}"/>
+
+{% if show_welcome %}
+  {% include "avi/avi_welcome.html" %}
+{% endif %}
+
+<div class="container-fluid">
+  
+  <div class="row navoffset">
+    <div class="col-sm-4 col-md-3 col-lg-2">
+      {% include "avi/avi_sidenav.html" %}
+    </div>  
+    <div class="col-sm-8 col-md-9 col-lg-10">
+      <div id="avi_tabcontent" class="tab-content">
+
+        <div role="tabpanel" class="tab-pane fade active in" data-title="SAMPLE" id="query" aria-labelledby="query-tab">
+          {% include "avi/panel_enter_query.html" %}
+        </div>
+        
+        <div role="tabpanel" class="tab-pane fade" data-title="SAMPLE" id="job" aria-labelledby="job-tab">
+          {% include "avi/panel_job_list.html" %}
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" data-title="SAMPLE" id="help" aria-labelledby="help-tab">
+          {% include "avi/panel_help.html" %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock avi_content %}
